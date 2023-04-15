@@ -16,10 +16,10 @@ tab1, tab2, tab3 = st.tabs(["Penguin Predict", "Evaluations", "Abount"])
 with tab1:
 
     model = pickle.load(open('model.penguins.sav','rb'))
-    species_encoder = pickle.load(open('species.penguins.sav','rb'))
-    island_encoder = pickle.load(open('island.penguins.sav','rb'))
-    sex_encoder = pickle.load(open('sex.penguins.sav','rb'))
-    evaluations = pickle.load(open('evaluations.penguins.sav','rb'))
+    species_encoder = pickle.load(open('encoder.species.sav','rb'))
+    island_encoder = pickle.load(open('encoder.island.sav','rb'))
+    sex_encoder = pickle.load(open('encoder.sex.sav','rb'))
+    evaluations = pickle.load(open('evals.all.sav','rb'))
 
  
 
@@ -55,7 +55,7 @@ with tab1:
 
 with tab2:
     st.header('Evaluations')
-    evaluations = pickle.load(open('evaluations.penguins.sav','rb'))
+    evaluations = pickle.load(open('evals.all.sav','rb'))
     st.dataframe(evaluations)
     x = evaluations.columns
     fig = px.Figure(data=[
